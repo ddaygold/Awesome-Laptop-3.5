@@ -49,7 +49,7 @@ end
 -- }}}
 
 -- This is used later as the default terminal and editor to run.
-terminal = "urxvt -fg green -bg black"
+terminal = "terminator"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -63,8 +63,8 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 local layouts =
 {
-    awful.layout.suit.floating,
     awful.layout.suit.tile,
+    awful.layout.suit.floating,
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
@@ -107,26 +107,26 @@ end
 -- Define a tag table which hold all screen tags.
 tags = {
  names  = { 
-         '☭:IRC',
-         '⚡:Luakit', 
-         '♨:Chrome', 
-         '☠:Vim',  
-         '☃:Vbox', 
-         '⌥:Multimedia', 
-         '⌘:Conky',
-         '✇:IDE',
-         '✣:Facepalm',
+         '1',
+         '2', 
+         '3', 
+         '4',  
+         '5', 
+         '6', 
+         '7',
+         '8',
+         '9',
            },
  layout = {
-      layouts[5],   -- 1:irc
-      layouts[10],  -- 2:luakit
-      layouts[10],  -- 3:chrome
-      layouts[12],  -- 4:vim
-      layouts[2],   -- 5:vbox
-      layouts[10],  -- 6:multimedia
-      layouts[10],  -- 7:conky
-      layouts[2],   -- 8:ide
-      layouts[10],  -- 9:facepalm
+      layouts[5],   -- 1:1
+      layouts[10],  -- 2:2
+      layouts[10],  -- 3:3
+      layouts[12],  -- 4:4
+      layouts[2],   -- 5:5
+      layouts[10],  -- 6:6
+      layouts[10],  -- 7:7
+      layouts[2],   -- 8:8
+      layouts[10],  -- 9:9
           }
        }
   for s = 1, screen.count() do
