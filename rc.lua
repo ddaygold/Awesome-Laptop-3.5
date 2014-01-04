@@ -118,15 +118,15 @@ tags = {
          '9',
            },
  layout = {
-      layouts[5],   -- 1:1
-      layouts[10],  -- 2:2
-      layouts[10],  -- 3:3
-      layouts[12],  -- 4:4
-      layouts[2],   -- 5:5
-      layouts[10],  -- 6:6
-      layouts[10],  -- 7:7
-      layouts[2],   -- 8:8
-      layouts[10],  -- 9:9
+      layouts[6],   -- 1:1
+      layouts[6],  -- 2:2
+      layouts[6],  -- 3:3
+      layouts[6],  -- 4:4
+      layouts[6],   -- 5:5
+      layouts[6],  -- 6:6
+      layouts[6],  -- 7:7
+      layouts[6],   -- 8:8
+      layouts[6],  -- 9:9
           }
        }
   for s = 1, screen.count() do
@@ -297,26 +297,26 @@ for s = 1, screen.count() do
    mywibox[s]:set_widget(layout)
    
    -- Create the bottom wibox
-     myinfowibox[s] = awful.wibox({ position = "bottom", screen = s })
-   -- Widgets that are aligned to the bottom
-    local bottom_layout = wibox.layout.fixed.horizontal()
-    bottom_layout:add(cpuicon)
-    bottom_layout:add(cpu)
-    bottom_layout:add(spacer)
-    bottom_layout:add(memicon)
-    bottom_layout:add(mem)
-    bottom_layout:add(spacer)
-    bottom_layout:add(wifiicon)
-    bottom_layout:add(wifi)
-    bottom_layout:add(spacer)
-    bottom_layout:add(weather)
-    bottom_layout:add(spacer)
-
- -- Now bring it all together 
-    --local layout = wibox.layout.align.horizontal()
-    --layout:set_bottom(bottom_layout)
-
-    myinfowibox[s]:set_widget(bottom_layout)
+--     myinfowibox[s] = awful.wibox({ position = "bottom", screen = s })
+--   -- Widgets that are aligned to the bottom
+--    local bottom_layout = wibox.layout.fixed.horizontal()
+--    bottom_layout:add(cpuicon)
+--    bottom_layout:add(cpu)
+--    bottom_layout:add(spacer)
+--    bottom_layout:add(memicon)
+--    bottom_layout:add(mem)
+--    bottom_layout:add(spacer)
+--    bottom_layout:add(wifiicon)
+--    bottom_layout:add(wifi)
+--    bottom_layout:add(spacer)
+--    bottom_layout:add(weather)
+--    bottom_layout:add(spacer)
+--
+-- -- Now bring it all together 
+--    --local layout = wibox.layout.align.horizontal()
+--    --layout:set_bottom(bottom_layout)
+--
+--    myinfowibox[s]:set_widget(bottom_layout)
 
 end
 -- }}}
