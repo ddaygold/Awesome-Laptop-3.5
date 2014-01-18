@@ -560,3 +560,5 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 awful.util.spawn("pulseaudio --start")
 awful.util.spawn("setxkbmap -option ctrl:nocaps")
+awful.util.spawn("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
+awful.util.spawn("nm-applet --sm-disable")
