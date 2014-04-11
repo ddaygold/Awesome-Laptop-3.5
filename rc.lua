@@ -374,7 +374,9 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1)         end),
     awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
-    awful.key({ modkey,           }, "w",     function () awful.util.spawn("luakit")    end, "Start Luakit Web Browser"),
+    awful.key({ modkey,           }, "w",     function () awful.util.spawn("chromium")    end),
+    awful.key({ modkey,  "Shift"  }, "m",     function () awful.util.spawn("toggle_mouse")    end),
+    awful.key({ "Control",  "Shift"  }, "l",     function () awful.util.spawn("xscreensaver-command --lock")    end),
 
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
@@ -469,26 +471,26 @@ awful.rules.rules = {
                      focus = awful.client.focus.filter,
                      keys = clientkeys,
                      buttons = clientbuttons } },
-    { rule = { class = "MPlayer" },
-      properties = { floating = true } },
-    { rule = { class = "pinentry" },
-      properties = { floating = true } },
-    { rule = { class = "gimp" },
-      properties = { floating = true } },
-    { rule = { class = "Chromium" },
-      properties = { tag = tags[1][3] } },
-    { rule = { class = "Vlc" },
-      properties = { tag = tags[1][6] } },
-    { rule = { class = "VirtualBox" },
-      properties = { tag = tags[1][5] } },
-    { rule = { class = "Gns3" },
-      properties = { tag = tags[1][5] } },
-    { rule = { class = "Bitcoin-qt" },
-      properties = { tag = tags[1][9] } },
-    { rule = { class = "luakit" },
-      properties = { tag = tags[1][2] } },
-    -- Set Firefox to always map on tags number 2 of screen 1.
-    -- { rule = { class = "Firefox" },
+    --{ rule = { class = "MPlayer" },
+    --  properties = { floating = true } },
+    --{ rule = { class = "pinentry" },
+    --  properties = { floating = true } },
+    --{ rule = { class = "gimp" },
+    --  properties = { floating = true } },
+    --{ rule = { class = "Chromium" },
+    --  properties = { tag = tags[1][3] } },
+    --{ rule = { class = "Vlc" },
+    --  properties = { tag = tags[1][6] } },
+    --{ rule = { class = "VirtualBox" },
+    --  properties = { tag = tags[1][5] } },
+    --{ rule = { class = "Gns3" },
+    --  properties = { tag = tags[1][5] } },
+    --{ rule = { class = "Bitcoin-qt" },
+    --  properties = { tag = tags[1][9] } },
+    --{ rule = { class = "luakit" },
+    --  properties = { tag = tags[1][2] } },
+    ---- Set Firefox to always map on tags number 2 of screen 1.
+    ---- { rule = { class = "Firefox" },
     --   properties = { tag = tags[1][2] } },
 }
 -- }}}
@@ -560,3 +562,5 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 awful.util.spawn("pulseaudio --start")
 awful.util.spawn("setxkbmap -option ctrl:nocaps")
+awful.util.spawn("unclutter")
+awful.util.spawn("xscreensaver")
