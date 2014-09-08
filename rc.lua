@@ -49,7 +49,7 @@ end
 -- }}}
 
 -- This is used later as the default terminal and editor to run.
-terminal = "terminator"
+terminal = "xterm"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -563,4 +563,5 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 awful.util.spawn("pulseaudio --start")
 awful.util.spawn("setxkbmap -option ctrl:nocaps")
 awful.util.spawn("unclutter")
-awful.util.spawn("xscreensaver")
+awful.util.spawn("xscreensaver -nosplash")
+awful.util.spawn_with_shell("sleep 5s && xflux -z 60616")
